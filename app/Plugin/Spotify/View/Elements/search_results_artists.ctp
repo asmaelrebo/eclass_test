@@ -7,7 +7,7 @@
 				if(!empty($item['images'])) {
 				 	echo $this->Html->image($item['images'][1]['url'], array('class' => 'img-responsive img-circle', 'alt' => 'Imagen Álbum'));
 				}
-				echo $this->Html->link($item['name'], array('plugin' => 'spotify', 'controller' => 'artists', 'action' => 'view', $item['id']));
+				echo $item['name'];
 				?>
 			</div>
 		<?php }
