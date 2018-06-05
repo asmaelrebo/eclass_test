@@ -1,0 +1,18 @@
+version: "2"
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - "8002:80"
+        volumes:
+            - ./:/code
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+        links:
+            - php
+    php:
+        build: .
+        volumes: 
+            - ./:/code
+        environment:
+            SPOTIFY_CLIENT_ID: CLIENT_ID
+            SPOTIFY_CLIENT_SECRET: CLIENT_SECRET
